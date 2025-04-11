@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.custom-container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .custom-container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .custom-container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .custom-container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .custom-container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .custom-container {
+    max-width: 1320px;
+  }
+}
+
+/* Outer border */
+.outer-border {
+  display: inline-block;
+  padding: 0px;
+  /* Adjust padding as needed */
+  border: 2px solid;
+  /* Thin border */
+  border-image: repeating-linear-gradient(45deg,
+      #d3d3d3,
+      /* Light gray */
+      #d3d3d3 5px,
+      transparent 5px,
+      transparent 10px) 1;
+}
+
+/* Inner border */
+.inner-border {
+  border: 20px solid;
+  border-image: repeating-linear-gradient(45deg,
+      #d3d3d3,
+      #d3d3d3 1px,
+      #fff 1px,
+      #fff 10px
+    ) 20;
+  padding: 0px;
+}
+
+/* Innermost border */
+.innermost-border {
+  border: 2px solid;
+  border-image: repeating-linear-gradient(45deg,
+      #d3d3d3,
+      #d3d3d3 5px,
+      transparent 5px,
+      transparent 10px
+    ) 1;
+  padding: 0px;
+}

@@ -1,14 +1,13 @@
 import { faSquareCaretDown } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Link from 'next/link'
 import React from 'react'
 
-
 const AboutMe = () => {
-    
     return (
         <div className='flex flex-col justify-center'>
             <div className=" text-blue-500 text-center border-t-4 border-b-4 border-double border-gray-300 p-0 my-5">
-                Here's a quick intro about me
+                Here&apos;s a quick intro about me
             </div>
             <div className='text-center pl-10 pr-10 pt-0 pb-5'>
                 <p>
@@ -16,9 +15,10 @@ const AboutMe = () => {
                 </p>
             </div>
             <div className='text-center'>
-                <a href="/about" className='text-blue-500 font-semibold'>Read More <FontAwesomeIcon icon={faSquareCaretDown} /></a>
+                <Link href="/about" className='text-blue-500 font-semibold'>Read More <FontAwesomeIcon icon={faSquareCaretDown} /></Link>
             </div>
         </div>
     )
 }
+
 export default AboutMe

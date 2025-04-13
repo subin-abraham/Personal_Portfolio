@@ -10,11 +10,11 @@ import { useRef } from 'react';
 
 
 const images = [
-  "https://picsum.photos/400/400?grayscale",
-  "https://picsum.photos/500/500?grayscale",
-  "https://picsum.photos/600/600?grayscale",
-  "https://picsum.photos/700/700?grayscale",
-  "https://picsum.photos/300/300?grayscale"
+  "/images/gallery_image_1.jpg",
+  "/images/gallery_image_2.jpg",
+  "/images/gallery_image_3.jpg",
+  "/images/gallery_image_4.jpg",
+  "/images/gallery_image_5.jpg",
 ];
 
 const transformStyles = [
@@ -53,7 +53,7 @@ const HomeComponent = () => {
   }
 
   return (
-    <div className="vw-100 min-h-[90vh] max-h-[100vh] flex flex-col justify-center items-center gap-10">
+    <div className="vw-100 min-h-[100vh] max-h-[auto] flex flex-col justify-center items-center gap-10">
       <div className="text-2xl md:text-6xl font-bold space-x-2.5 text-center flex">
         <span>
           <SplitText

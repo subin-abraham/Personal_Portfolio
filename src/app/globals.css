@@ -13,8 +13,8 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background-color: #ffffff;
+  color: #0a0a0a;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -78,8 +78,7 @@ body {
       #d3d3d3,
       #d3d3d3 1px,
       #fff 1px,
-      #fff 10px
-    ) 20;
+      #fff 10px) 20;
   padding: 0px;
 }
 
@@ -90,7 +89,6 @@ body {
       #d3d3d3,
       #d3d3d3 5px,
       transparent 5px,
-      transparent 10px
-    ) 1;
+      transparent 10px) 1;
   padding: 0px;
 }

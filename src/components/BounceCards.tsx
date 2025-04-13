@@ -148,6 +148,8 @@ export default function BounceCards({
             className="w-full h-full object-cover"
             src={src}
             alt={`card-${idx}`}
+            width={100}
+            height={100}
           />
         </div>
       ))}

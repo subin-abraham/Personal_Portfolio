@@ -22,11 +22,11 @@ const Header = () => {
     <header className='p-3 border-b-4 border-double border-gray-300 font-semibold'>
       <div className="flex items-center justify-between">
         {/* Left - Profile */}
-        <div>
+        <div className='border rounded-full border-gray-300'>
           <Link href="/">
-            <Image 
+            <Image
               className='cursor-pointer rounded-full'
-              src="/images/profile_placeholder.jpg"
+              src="/images/Profile_Image.jpeg"
               alt="profile"
               width={50}
               height={50}

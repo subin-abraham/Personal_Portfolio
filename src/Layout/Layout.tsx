@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer"
 import Header from "../components/Header"
 import SplashCursor from "../components/SplashCursor"
 import { ReactNode } from "react"
@@ -12,6 +13,7 @@ export default function Layout({ children }: LayoutProps) {
       <Header />
       <SplashCursor />
       <main>{children}</main>
+      <Footer/>
     </div>
   )
 }

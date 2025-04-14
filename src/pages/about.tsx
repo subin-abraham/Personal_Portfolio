@@ -95,7 +95,7 @@ export default function About() {
   }, [sections.length, isMobile]);
 
   return (
-    <div ref={containerRef} className="relative bg-gray-100">
+    <div ref={containerRef} className="relative bg-gray-100 mt-5">
       {/* Header section - minimal height */}
       <div className="py-16 flex items-center justify-center">
         <h1 ref={headingRef} className="text-5xl font-bold text-center">Here's a quick intro about me</h1>
@@ -130,7 +130,7 @@ export default function About() {
             id={section.id}
             // On mobile: center the card with vertical spacing.
             // On desktop: use original full-screen section style.
-            className={isMobile ? "flex justify-center py-8" : "relative min-h-screen flex items-center"}
+            className={isMobile ? "flex justify-center py-8" : "relative min-h-[50vh] flex items-center"}
             ref={(el: HTMLDivElement | null) => { sectionRefs.current[index] = el }}
           >
             {/* Connection line - conditionally visible only on non-mobile view */}

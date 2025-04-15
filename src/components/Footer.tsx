@@ -11,7 +11,7 @@ const Footer = () => {
                 <AddImage src={'/Icons/instagram.png'} width={40} height={40} alt='Instagram' className='cursor-pointer' redirectURL='https://www.instagram.com/subin__abraham_/' />
             </div>
             <div>Developed by Subin Abraham</div>
-            <div>Build With Next, Tailwind</div>
+            <div>Build With Next, Tailwind & hygraph</div>
         </div>
     )
 }

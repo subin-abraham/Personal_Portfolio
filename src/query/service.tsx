@@ -14,3 +14,15 @@ export const GET_BLOG_QUERY = gql
     }
 }
 `
+export const GET_WORK_EXPERIENCE = gql`
+query {
+workExperiences {
+    companyLogo {
+      url
+    }
+    title
+    designation
+    details
+  }
+}
+`

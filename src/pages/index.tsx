@@ -5,6 +5,7 @@ import AboutMe from "../components/AboutMe";
 import WorkExperience, { Experience } from "@/components/WorkExperience";
 import hygraph from '@/lib/hygraphClient';
 import { GET_WORK_EXPERIENCE } from '@/query/service';
+import MobileExperiencePopup from '@/components/warning/MobileExperiencePopup';
 
 export default function Home() {
   const [experiences, setExperiences] = useState<Experience[]>([]);
@@ -25,6 +26,7 @@ export default function Home() {
 
   return (
     <div>
+      <MobileExperiencePopup />
       <HomeComponent />
       <AboutMe />
       {error ? (

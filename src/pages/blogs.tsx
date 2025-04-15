@@ -30,7 +30,7 @@ export default function Blogs() {
 
       <div className="flex flex-wrap justify-between mt-10 gap-5">
         <div className="w-screen text-[#5E5F6E] text-center border-t-4 border-b-4 border-double border-gray-300 p-5">
-          Comming Soon....!
+          Coming Soon....!
         </div>
 
 

@@ -8,22 +8,20 @@ const MobileExperiencePopup: React.FC = () => {
         const alreadyShown = sessionStorage.getItem('device-warning-shown');
         if (alreadyShown) return;
 
-        const determineDevice = () => {
-            const width = window.innerWidth;
-            if (width < 768) {
-                setDeviceType('mobile');
-                sessionStorage.setItem('device-warning-shown', 'true');
-            } else if (width >= 768 && width < 1024) {
-                setDeviceType('tablet');
-                sessionStorage.setItem('device-warning-shown', 'true');
-            }
-        };
+        const width = window.innerWidth;
 
-        determineDevice();
-
-        window.addEventListener('resize', determineDevice);
-        return () => window.removeEventListener('resize', determineDevice);
+        if (width < 768) {
+            setDeviceType('mobile');
+        } else if (width >= 768 && width < 1024) {
+            setDeviceType('tablet');
+        }
     }, []);
+
+    useEffect(() => {
+        if (deviceType) {
+            sessionStorage.setItem('device-warning-shown', 'true');
+        }
+    }, [deviceType]);
 
     if (!deviceType) return null;
 

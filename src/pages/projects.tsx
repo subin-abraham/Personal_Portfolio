@@ -1,15 +1,44 @@
-'use client'
-export default function Projects() {
+// components/Project.tsx
+'use client';
+
+import React, { useEffect, useState } from 'react';
+import ProjectCard from '@/components/ProjectCard';
+import hygraph  from '@/lib/hygraphClient';
+import { GET_PROJECTS } from '@/query/service';
+
+interface ProjectData {
+  id: string;
+  projectImage: { url: string };
+  title: string;
+  description: string;
+}
+
+const Project: React.FC = () => {
+  const [projects, setProjects] = useState<ProjectData[]>([]);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const data = await hygraph.request<{ projects: ProjectData[] }>(GET_PROJECTS);
+        setProjects(data.projects);
+      } catch (error) {
+        console.error('Error fetching projects:', error);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">My Projects</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Project cards will go here */}
-        <div className="border rounded-lg p-4">
-          <h2 className="text-xl font-semibold mb-2">Project Title</h2>
-          <p>Project description goes here</p>
-        </div>
+      <h1 className="text-3xl font-bold mb-6">My Works</h1>
+      <div className="grid grid-cols-1 gap-6">
+        {projects.map((project) => (
+          <ProjectCard key={project.id} data={project} />
+        ))}
       </div>
     </div>
-  )
-}
+  );
+};
+
+export default Project;

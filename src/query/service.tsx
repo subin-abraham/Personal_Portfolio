@@ -26,3 +26,16 @@ workExperiences {
   }
 }
 `
+
+export const GET_PROJECTS = gql`
+query {
+projects {
+    projectImage {
+      url
+    }
+    title
+    description
+    
+  }
+}
+`

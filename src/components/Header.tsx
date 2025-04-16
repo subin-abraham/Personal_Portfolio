@@ -7,6 +7,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileArrowDown, faHandshake, faBars, faTimes, faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
+
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/resume/Subin_Abraham_Resume.pdf';
+    link.download = 'Subin_Abraham_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -14,9 +24,9 @@ const Header = () => {
     setIsMobileMenuOpen(prev => !prev);
   };
 
-    function bookMeeting(): void {
-        window.open("https://calendly.com/subinabraham346/30min", "_blank", "noopener,noreferrer");
-        }
+  function bookMeeting(): void {
+    window.open("https://calendly.com/subinabraham346/30min", "_blank", "noopener,noreferrer");
+  }
 
   return (
     <header className='p-3 border-b-4 border-double border-gray-300 font-semibold'>
@@ -46,7 +56,7 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link 
+              <Link
                 href="/about"
                 className={`cursor-pointer ${pathname === '/about' ? 'text-blue-500 font-bold' : 'hover:text-blue-500'}`}
               >
@@ -54,7 +64,7 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link 
+              <Link
                 href="/projects"
                 className={`cursor-pointer ${pathname === '/projects' ? 'text-blue-500 font-bold' : 'hover:text-blue-500'}`}
               >
@@ -62,7 +72,7 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link 
+              <Link
                 href="/blogs"
                 className={`cursor-pointer ${pathname === '/blogs' ? 'text-blue-500 font-bold' : 'hover:text-blue-500'}`}
               >
@@ -77,7 +87,7 @@ const Header = () => {
           <button className='btn flex items-center gap-1 cursor-pointer' onClick={() => bookMeeting()}>
             Book a Meeting <FontAwesomeIcon icon={faCalendarDays} />
           </button>
-          <button className='btn flex items-center gap-1 cursor-pointer'>
+          <button className='btn flex items-center gap-1 cursor-pointer' onClick={() => handleDownload()}>
             Resume <FontAwesomeIcon icon={faFileArrowDown} />
           </button>
         </div>
@@ -132,10 +142,10 @@ const Header = () => {
             </li>
           </ul>
           <div className="mt-4 flex flex-col gap-3">
-            <button className='btn w-full flex justify-center items-center gap-1 hover:text-blue-500'>
+            <button className='btn w-full flex justify-center items-center gap-1 hover:text-blue-500' onClick={() => bookMeeting()}>
               Book a Meeting <FontAwesomeIcon icon={faHandshake} />
             </button>
-            <button className='btn w-full flex justify-center items-center gap-1 hover:text-blue-500'>
+            <button className='btn w-full flex justify-center items-center gap-1 hover:text-blue-500' onClick={() => handleDownload()}>
               Resume <FontAwesomeIcon icon={faFileArrowDown} />
             </button>
           </div>

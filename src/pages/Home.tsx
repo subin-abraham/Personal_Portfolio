@@ -1,7 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react'
 import BounceCards from '../components/BounceCards'
-import "../style/Home-Style.css"
 import RotatingText from '../components/RotatingText';
 import SplitText from '../components/SplitText';
 import { easings } from '@react-spring/web';
@@ -54,7 +53,7 @@ const HomeComponent = () => {
   useEffect(() => {
     const updateDimensions = () => {
       if (window.innerWidth < 768) {
-        setDimensions({ width: 100, height: 250 });
+        setDimensions({ width: 350, height: 250 });
       } else {
         setDimensions({ width: 500, height: 250 });
       }

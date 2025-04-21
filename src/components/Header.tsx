@@ -84,10 +84,10 @@ const Header = () => {
 
         {/* Right - Desktop Action Buttons */}
         <div className="hidden md:flex gap-4">
-          <button className='btn flex items-center gap-1 cursor-pointer' onClick={() => bookMeeting()}>
+          <button className='btn flex items-center gap-1 cursor-pointer hover:text-blue-500' onClick={() => bookMeeting()}>
             Book a Meeting <FontAwesomeIcon icon={faCalendarDays} />
           </button>
-          <button className='btn flex items-center gap-1 cursor-pointer' onClick={() => handleDownload()}>
+          <button className='btn flex items-center gap-1 cursor-pointer hover:text-blue-500' onClick={() => handleDownload()}>
             Resume <FontAwesomeIcon icon={faFileArrowDown} />
           </button>
         </div>

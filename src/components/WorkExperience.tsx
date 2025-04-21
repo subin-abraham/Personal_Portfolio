@@ -27,7 +27,7 @@ interface WorkExperienceProps {
 
 const WorkExperience: React.FC<WorkExperienceProps> = ({ experiences }) => {
     return (
-        <div className="relative container mx-auto mt-10 px-4">
+        <div className="relative container mx-auto mt-10 px-0 md:px-4">
             {/* Section Header */}
             <div className="text-blue-500 text-center border-t-4 border-b-4 border-double border-gray-300 my-5 w-full">
                 My Experiences

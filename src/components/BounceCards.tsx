@@ -2,6 +2,8 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
+import "../style/Bounce-Card.css"
+
 
 interface BounceCardsProps {
   className?: string;
@@ -127,7 +129,7 @@ export default function BounceCards({
 
   return (
     <div
-      className={`relative flex items-center justify-center ${className}`}
+      className={`relative flex items-center justify-center bounceCardOverflow ${className}`}
       style={{
         width: containerWidth,
         height: containerHeight,

@@ -1,0 +1,10 @@
+.bounceCardOverflow {
+    overflow: visible;
+}
+
+@media(max-width:768px) {
+    .bounceCardOverflow {
+        overflow: hidden;
+    }
+
+}

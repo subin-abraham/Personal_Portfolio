@@ -1,5 +1,5 @@
 'use client';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import BounceCards from '../components/BounceCards'
 import "../style/Home-Style.css"
 import RotatingText from '../components/RotatingText';
@@ -46,6 +46,26 @@ const segments = [
 
 const HomeComponent = () => {
 
+  const [dimensions, setDimensions] = useState({
+    width: 500,
+    height: 250,
+  });
+
+  useEffect(() => {
+    const updateDimensions = () => {
+      if (window.innerWidth < 768) {
+        setDimensions({ width: 100, height: 250 });
+      } else {
+        setDimensions({ width: 500, height: 250 });
+      }
+    };
+
+    updateDimensions();
+
+    window.addEventListener('resize', updateDimensions);
+    return () => window.removeEventListener('resize', updateDimensions);
+  }, []);
+
   const containerRef = useRef<HTMLDivElement>(null);
 
   function handleAnimationComplete(): void {
@@ -53,7 +73,7 @@ const HomeComponent = () => {
   }
 
   return (
-    <div className="vw-100 min-h-[100vh] max-h-[auto] flex flex-col justify-center items-center gap-10">
+    <div className="vw-100 md:min-h-[100vh] h-auto mt-5 md:max-h-[auto] flex flex-col justify-center items-center gap-10">
       <div className="text-2xl md:text-6xl font-bold space-x-2.5 text-center flex">
         <span>
           <SplitText
@@ -68,14 +88,15 @@ const HomeComponent = () => {
           />
         </span>
       </div>
-      <div className="max-w-3/4 text-[#5E5F6E] text-center border-t-4 border-b-4 border-double border-gray-300 p-5">
+      <div className="md:max-w-3/4 max-w-auto text-[#5E5F6E] text-center border-t-4 border-b-4 border-double border-gray-300 p-5">
         I'm a front-end developer with a love for design. This site is intentionally over-engineered and serves as my playground for experimenting with new ideas and seeing what sticks!
-      </div>      <div>
+      </div>
+      <div className=''>
         <BounceCards
           className="custom-bounceCards"
           images={images}
-          containerWidth={500}
-          containerHeight={250}
+          containerWidth={dimensions.width}
+          containerHeight={dimensions.height}
           animationDelay={1}
           animationStagger={0.08}
           easeType="elastic.out(1, 0.5)"

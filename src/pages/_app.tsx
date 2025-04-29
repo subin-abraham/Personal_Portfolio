@@ -1,12 +1,28 @@
+// pages/_app.tsx
 import '../app/globals.css'
 import '../lib/fontawesome'
 import type { AppProps } from 'next/app'
 import Layout from '../Layout/Layout'
+import { LoaderProvider, useLoader } from '../context/LoaderContext'
+import GlobalLoader from '@/context/GlobalLoader'
 
-export default function App({ Component, pageProps }: AppProps) {
+function AppContent({ Component, pageProps }: AppProps) {
+  const { loading } = useLoader();
+  
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
-  )
+    <>
+      {loading && <GlobalLoader />}
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
+  );
+}
+
+export default function App(props: AppProps) {
+  return (
+    <LoaderProvider>
+      <AppContent {...props} />
+    </LoaderProvider>
+  );
 }

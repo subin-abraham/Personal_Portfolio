@@ -3,8 +3,9 @@
 
 import React, { useEffect, useState } from 'react';
 import ProjectCard from '@/components/ProjectCard';
-import hygraph  from '@/lib/hygraphClient';
+import hygraph from '@/lib/hygraphClient';
 import { GET_PROJECTS } from '@/query/service';
+import { useLoader } from '@/context/LoaderContext';
 
 interface ProjectData {
   id: string;
@@ -15,14 +16,18 @@ interface ProjectData {
 
 const Project: React.FC = () => {
   const [projects, setProjects] = useState<ProjectData[]>([]);
+  const { setLoading } = useLoader();
 
   useEffect(() => {
     const fetchProjects = async () => {
       try {
+        setLoading(true);
         const data = await hygraph.request<{ projects: ProjectData[] }>(GET_PROJECTS);
         setProjects(data.projects);
       } catch (error) {
         console.error('Error fetching projects:', error);
+      } finally {
+        setLoading(false);
       }
     };
 

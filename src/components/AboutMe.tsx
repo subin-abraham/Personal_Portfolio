@@ -15,7 +15,7 @@ const AboutMe = () => {
                 </p>
             </div>
             <div className='text-center'>
-                <Link href="/about" className='text-blue-500 font-semibold'>Read More <FontAwesomeIcon icon={faSquareCaretDown} /></Link>
+                <Link href="/about" className='text-blue-500 font-semibold hover:text-blue-300'>Read More <FontAwesomeIcon icon={faSquareCaretDown} /></Link>
             </div>
         </div>
     )

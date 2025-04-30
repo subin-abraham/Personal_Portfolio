@@ -109,9 +109,9 @@ export default function About() {
       >
         {/* Central track and blue ball are only rendered if not in mobile view */}
         {!isMobile && (
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-2 bg-gray-300 h-full">
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-2 bg-gray-300 h-full z-10">
             <div 
-              className="sticky top-1/2 z-10 rounded-full bg-blue-500 transform -translate-x-1/2 ml-1"
+              className="sticky top-1/2 z-20 rounded-full bg-blue-500 transform -translate-x-1/2 ml-1"
               style={{ 
                 width: '32px',
                 height: '32px',

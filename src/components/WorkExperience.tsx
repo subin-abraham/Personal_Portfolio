@@ -80,7 +80,9 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({ experiences }) => {
                                 <>
                                     {/* Left Side Card */}
                                     <div className="col-start-1 col-span-4 flex justify-end">
-                                        <div className="bg-white shadow-lg p-4 rounded w-full max-w-md">
+                                        <div className="bg-white shadow-lg p-4 rounded w-full max-w-md
+                                                        transform transition-transform duration-300
+                                                        hover:scale-105">
                                             <div className="flex gap-3 items-center mb-2">
                                                 <div className="rounded">
                                                     <Image
@@ -125,7 +127,8 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({ experiences }) => {
 
                                     {/* Right Side Card */}
                                     <div className="col-start-6 col-span-4 flex justify-start">
-                                        <div className="bg-white shadow-lg p-4 rounded w-full max-w-md">
+                                        <div className="bg-white shadow-lg p-4 rounded w-full max-w-md transform transition-transform duration-300
+                                                        hover:scale-105">
                                             <div className="flex gap-3 items-center mb-2">
                                                 <div className="rounded">
                                                     <Image
